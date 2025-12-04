@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# Updt: NixOS Rebuild Helper with Git Change Summary, NVIM Diff, Notifications & Sounds
+
+FLAKE_PATH="/etc/nixos#Overlord"
+NIX_DIR="/etc/nixos"
+SUCCESS_SOUND="/run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga"
+ERROR_SOUND="/run/current-system/sw/share/sounds/freedesktop/stereo/dialog-error.oga"
+
+cd "$NIX_DIR" || {
+    notify-send "❌ NixOS Updt Error" "Cannot cd into $NIX_DIR"
+    exit 1
+}
+
+echo "🔍 Detecting changes in git…"
+CHANGED_FILES=$(git diff --name-only)
+
+if [[ -z "$CHANGED_FILES" ]]; then
+    echo "ℹ No changed files. Proceeding without diff."
+else
+    echo "📄 Opening Neovim to show diffs..."
+    sleep 1
+
+    # Open all changed files in Neovim diff mode
+    nvim -d $(git diff --name-only)
+fi
+
+echo "🚀 Starting nixos-rebuild switch..."
+echo "========================================="
+
+if sudo nixos-rebuild switch --show-trace --impure --flake "$FLAKE_PATH" --upgrade; then
+    echo
+    echo "✅ NixOS rebuild succeeded!"
+    notify-send "✅ NixOS Rebuild Done" "System updated successfully!"
+    pw-play "$SUCCESS_SOUND"
+
+    echo
+    echo "📌 Committing changes to Git..."
+    git add -A
+    git commit -m "Automatic update: $(date '+%Y-%m-%d %H:%M:%S')"
+    echo "📦 Changes committed."
+
+else
+    echo
+    echo "❌ NixOS rebuild failed!"
+    notify-send "❌ NixOS Rebuild Failed" "Check terminal for errors."
+    pw-play "$ERROR_SOUND"
+    exit 1
+fi
+
