@@ -1,0 +1,60 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./pkgs.nix
+      ./services.nix
+      ./users.nix
+      ./gui.nix
+    ];
+
+
+  # System settings
+  system = {
+    autoUpgrade = {
+      enable = true;
+      dates = "weekly";
+    };
+    stateVersion = "25.11";
+  };
+  # Nix Settings
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
+
+  # Networking settings
+  networking = {
+    hostName = "Overlord";
+    networkmanager = {
+      enable = true;
+    };
+  };
+  # Localization settings
+  time.timeZone = "Asia/Kathmandu";
+  i18n.defaultLocale = "en_US.UTF-8";
+  # Virtualization
+  virtualisation.libvirtd = {
+    enable = true;
+    extraConfig = ''
+      virtiofsd_path = "${pkgs.qemu}/bin/virtiofsd"
+    '';
+  };
+  # Console settings
+  # /run/current-system/sw/share/consolefonts/ter-u16n.psfu.gz
+  console.font = "/run/current-system/sw/share/consolefonts/ter-u18n.psf.gz";
+
+}
