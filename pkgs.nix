@@ -40,6 +40,7 @@ in {
     kdePackages.dragon
     kdePackages.flatpak-kcm
     kdePackages.kate
+    kdePackages.kpmcore
     kdePackages.kwallet-pam
     kdePackages.plasma-nm
     kdePackages.plasma-pa
@@ -75,7 +76,6 @@ in {
 
     # GUI (NUR)
     inputs.zen-browser.packages."x86_64-linux".default
-
 
     # TUI Applications
     alsa-utils
