@@ -125,6 +125,7 @@ in {
     qemu
     qemu_kvm
     speechd
+    steam-run
     swayidle
     syncthing
     tgpt
