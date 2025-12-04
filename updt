@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Updt: NixOS Rebuild Helper with Git Change Summary, NVIM Diff, Notifications & Sounds
+# Updt: NixOS Rebuild Helper with LazyGit Diff, Notifications & Sounds
 
 FLAKE_PATH="/etc/nixos#Overlord"
 NIX_DIR="/etc/nixos"
@@ -12,17 +12,17 @@ cd "$NIX_DIR" || {
     exit 1
 }
 
-echo "🔍 Detecting changes in git…"
+# Check if there are changes
 CHANGED_FILES=$(git diff --name-only)
 
 if [[ -z "$CHANGED_FILES" ]]; then
-    echo "ℹ No changed files. Proceeding without diff."
+    echo "ℹ No changes detected in /etc/nixos"
 else
-    echo "📄 Opening Neovim to show diffs..."
+    echo "📄 Opening LazyGit to inspect changes..."
     sleep 1
 
-    # Open all changed files in Neovim diff mode
-    nvim -d $(git diff --name-only)
+    # Open LazyGit inside the NixOS config directory
+    lazygit
 fi
 
 echo "🚀 Starting nixos-rebuild switch..."

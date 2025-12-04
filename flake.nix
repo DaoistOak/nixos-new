@@ -32,7 +32,7 @@
         }
       ./configuration.nix
       home-manager.nixosModules.default
-
+      chaotic.nixosModules.default
         # chaotic.nixosmodules.nyx-cache
         # chaotic.nixosmodules.nyx-overlay
         # chaotic.nixosmodules.nyx-registry

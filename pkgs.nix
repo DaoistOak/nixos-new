@@ -108,6 +108,7 @@ in {
     kbd
     killall
     lazydocker
+    lazygit
     lm_sensors
     mesa-demos
     mpv
@@ -193,16 +194,25 @@ in {
   virtualisation.docker.enable = true;
   services.flatpak.enable = true;
   users.extraGroups.docker.members = [ "zeph" ];
-fonts = {
-  enableDefaultPackages = true;
+  fonts = {
+    enableDefaultPackages = true;
 
-  packages = with pkgs; [
-    # Core Latin + Western languages
-    noto-fonts
+    packages = with pkgs; [
+     # Core Latin + Western languages
+     noto-fonts
 
-    # Optional: High-quality fallback fonts
-    liberation_ttf
-    dejavu_fonts
-  ];
-};
+     # Optional: High-quality fallback fonts
+     liberation_ttf
+     dejavu_fonts
+    ];
+  };
+  chaotic={
+    # mesa-git.enable = true;
+    nyx={
+      cache.enable=true;
+      overlay.enable=true;
+      nixPath.enable=true;
+
+    };
+  };
 }
