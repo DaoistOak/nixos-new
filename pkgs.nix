@@ -60,7 +60,6 @@ in {
     popcorntime
     protonvpn-gui
     qbittorrent
-    spotube
     syncthingtray
     terminus_font
     thunderbird
