@@ -99,7 +99,7 @@ in {
     fzf
     gcc
     gdb
-    gemini-cli-bin
+    gemini-cli
     git
     gnirehtet
     gnumake
