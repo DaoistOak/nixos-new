@@ -99,6 +99,7 @@ in {
     fzf
     gcc
     gdb
+    gemini-cli-bin
     git
     gnirehtet
     gnumake
@@ -118,6 +119,7 @@ in {
     ntfs3g
     oh-my-zsh
     ollama
+    opencode
     openssl
     p7zip
     pciutils
