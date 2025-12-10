@@ -34,6 +34,8 @@
     # 🎧 Blueman (Bluetooth GUI) — disabled as requested
     blueman.enable = false;
 
+    dnsmasq.enable = true;
+
     # 🖐️ Fingerprint reader
     fprintd.enable = true;
 
