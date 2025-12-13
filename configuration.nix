@@ -47,11 +47,15 @@
   time.timeZone = "Asia/Kathmandu";
   i18n.defaultLocale = "en_US.UTF-8";
   # Virtualization
-  virtualisation.libvirtd = {
-    enable = true;
-    extraConfig = ''
-      virtiofsd_path = "${pkgs.qemu}/bin/virtiofsd"
-    '';
+  virtualisation = {
+    docker.enable = true;
+    waydroid.enable=true;
+    libvirtd = {
+      enable = true;
+      extraConfig = ''
+        virtiofsd_path = "${pkgs.qemu}/bin/virtiofsd"
+      '';
+    };
   };
   # Console settings
   # /run/current-system/sw/share/consolefonts/ter-u16n.psfu.gz

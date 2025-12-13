@@ -69,7 +69,6 @@ in {
     viber
     virt-manager
     vscodium
-    waydroid
     webcord-vencord
     winboat
     wineWowPackages.full
@@ -194,7 +193,6 @@ in {
     speechd
     terminus_font
     ];
-  virtualisation.docker.enable = true;
   services.flatpak.enable = true;
   users.extraGroups.docker.members = [ "zeph" ];
   fonts = {
