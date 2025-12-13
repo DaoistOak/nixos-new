@@ -41,7 +41,6 @@
     hostName = "Overlord";
     networkmanager = {
       enable = true;
-      dns="dnsmasq";
     };
     nftables = {
       enable = true;
