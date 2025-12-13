@@ -34,8 +34,6 @@
     # 🎧 Blueman (Bluetooth GUI) — disabled as requested
     blueman.enable = false;
 
-    dnsmasq.enable = true;
-
     # 🖐️ Fingerprint reader
     fprintd.enable = true;
 
@@ -59,6 +57,8 @@
 
     # 🖨️ Printing (CUPS)
     printing.enable = true;
+
+    resolved.enable=true;
 
     # ⚙️ Seat management
     seatd.enable = true;
