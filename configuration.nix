@@ -42,6 +42,9 @@
     networkmanager = {
       enable = true;
     };
+    nftables = {
+      enable = true;
+    };
   };
   # Localization settings
   time.timeZone = "Asia/Kathmandu";
