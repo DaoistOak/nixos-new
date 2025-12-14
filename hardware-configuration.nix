@@ -84,7 +84,8 @@ hardware = {
       vulkan-validation-layers
     ];
     extraPackages32 = with pkgs; [
-      # pkgsi686Linux.mesa
+      # pkgsi686Linux.vulkan-loader
+      # pkgsi686Linux.amdvlk
     ];
   };
 };

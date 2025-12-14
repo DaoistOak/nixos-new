@@ -172,6 +172,7 @@ in {
     vulkan-loader
     vulkan-tools
     vulkan-validation-layers
+    vulkan-hdr-layer-kwin6
     zlib
     arduino-cli
     picocom
@@ -181,12 +182,8 @@ in {
     dnsmasq
     flatpak
     fprintd
-    ocl-icd
-    intel-compute-runtime
     libnotify
-    pocl
     pulseaudio
-    rocmPackages.clr
     spice
     spice-gtk
     spice-vdagent
@@ -208,7 +205,7 @@ in {
     ];
   };
   chaotic={
-    # mesa-git.enable = true;
+    mesa-git.enable = true;
     nyx={
       cache.enable=true;
       overlay.enable=true;
