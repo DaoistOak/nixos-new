@@ -29,6 +29,9 @@
   programs.hyprland ={
     enable = true;
   };
+  # 🎧 Blueman (Bluetooth GUI) — disabled as requested
+  services.blueman.enable = false;
+
   programs.steam.enable = true;
   xdg.portal = {
     enable = true;

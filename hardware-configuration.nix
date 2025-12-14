@@ -56,22 +56,15 @@ boot = {
 
   # --- Bootloader ---
   loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 5;
-    };
-    # grub = {
-    #   enable = true;
-    #   device = "nodev";  # For EFI
-    #   efiSupport = true;
-    #   useOSProber = true;  # Optional, for dual-boot
-    # };
-    efi={
-        canTouchEfiVariables = true;
-        # efiSysMountPoint = "/boot"; 
-    };
-  };
-
+        systemd-boot = {
+          enable = true;
+          configurationLimit = 5;
+        };
+        efi={
+            canTouchEfiVariables = true;
+            # efiSysMountPoint = "/boot";
+        };
+      };
   # --- Misc ---
   extraModulePackages = [ ];
 };

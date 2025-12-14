@@ -31,9 +31,6 @@
       };
     };
 
-    # 🎧 Blueman (Bluetooth GUI) — disabled as requested
-    blueman.enable = false;
-
     # 🖐️ Fingerprint reader
     fprintd.enable = true;
 
