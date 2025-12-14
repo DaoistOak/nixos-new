@@ -189,6 +189,7 @@ in {
     spice-vdagent
     speechd
     terminus_font
+    inputs.caelestia-shell.packages.${pkgs.system}.default
     ];
   services.flatpak.enable = true;
   users.extraGroups.docker.members = [ "zeph" ];

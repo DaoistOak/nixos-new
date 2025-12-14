@@ -18,9 +18,13 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     nur.url = "github:nix-community/NUR";
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, chaotic, nur, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, chaotic, nur, caelestia-shell, ... }@inputs: {
   nixosConfigurations."Overlord" = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = {
@@ -33,6 +37,7 @@
       ./configuration.nix
       home-manager.nixosModules.default
       chaotic.nixosModules.default
+
         # chaotic.nixosmodules.nyx-cache
         # chaotic.nixosmodules.nyx-overlay
         # chaotic.nixosmodules.nyx-registry
