@@ -18,6 +18,10 @@
     XDG_DATA_HOME = "/home/zeph/.local/share";
     XDG_CACHE_HOME = "/home/zeph/.cache";
   };
+  environment.sessionVariables = {
+    AMD_VULKAN_ICD = "RADV";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json:/run/opengl-driver/share/vulkan/icd.d/radeon_icd.i686.json";
+  };
   # Enable Zsh
   programs.zsh.enable = true;
   programs.direnv.enableZshIntegration=true;
