@@ -2,6 +2,7 @@
 {
   # Enable X11
   services.xserver.enable = true;
+  programs.xwayland.enable = true;
 
   # Enable SDDM
   services.displayManager.sddm = {
@@ -28,6 +29,7 @@
   # Enable Hyprland (Optional)
   programs.hyprland ={
     enable = true;
+    xwayland.enable = true;
   };
   # 🎧 Blueman (Bluetooth GUI) — disabled as requested
   services.blueman.enable = false;
