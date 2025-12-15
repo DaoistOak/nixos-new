@@ -110,7 +110,7 @@ in {
     lazydocker
     lazygit
     lm_sensors
-    mesa-demos
+    # mesa-demos
     mpv
     neovim
     ninja
@@ -152,7 +152,7 @@ in {
     glibc
     glibc.dev
     icu77
-    libdrm
+    # libdrm
     libgcc
     libgccjit
     libvirt
@@ -161,7 +161,7 @@ in {
     libva
     libvdpau
     libvdpau-va-gl
-    mesa
+    # mesa
     nil
     pkg-config
     radeontop

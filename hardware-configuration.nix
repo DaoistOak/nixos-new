@@ -78,15 +78,15 @@ hardware = {
   graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = with pkgs; [
-      mesa
-      vulkan-loader         # ensures Vulkan runtime is installed
-      vulkan-validation-layers
-    ];
-    extraPackages32 = with pkgs; [
-      pkgsi686Linux.vulkan-loader
-      pkgsi686Linux.mesa
-    ];
+    # extraPackages = with pkgs; [
+    #   mesa
+    #   vulkan-loader         # ensures Vulkan runtime is installed
+    #   vulkan-validation-layers
+    # ];
+    # extraPackages32 = with pkgs; [
+      # pkgsi686Linux.vulkan-loader
+      # pkgsi686Linux.mesa
+    # ];
   };
 };
 
