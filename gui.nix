@@ -27,9 +27,10 @@
     };
   };
   # Enable Hyprland (Optional)
-  programs.hyprland ={
+  programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    
   };
   # 🎧 Blueman (Bluetooth GUI) — disabled as requested
   services.blueman.enable = false;
