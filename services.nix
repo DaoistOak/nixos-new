@@ -57,9 +57,6 @@
 
     resolved.enable=true;
 
-    # ⚙️ Seat management
-    seatd.enable = true;
-
     # 🗝️ TLP tuning
     tlp = {
       enable = true;
