@@ -5,7 +5,6 @@
     nixpkgs= {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
     zen-browser={
       url = "github:youwen5/zen-browser-flake";
     };

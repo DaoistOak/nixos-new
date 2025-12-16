@@ -3,9 +3,6 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, stdenv, inputs, ... }:
 
-let
-  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
@@ -39,7 +36,7 @@ boot = {
       kernelParams = [
         "quiet"
         "splash"
-        "loglevel=3"
+"loglevel=3"
         "rd.systemd.show_status=auto"
       ];
 
@@ -79,8 +76,8 @@ boot = {
     bluetooth.enable = true;
 
     graphics = {
-      package = pkgs-unstable.mesa;
-      package32 = pkgs-unstable.pkgsi686Linux.mesa;
+      package = pkgs.mesa;
+      package32 = pkgs.pkgsi686Linux.mesa;
       enable = true;
       enable32Bit = true;
        extraPackages = with pkgs; [

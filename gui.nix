@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
   # Enable X11
+  services.xserver.enable=true;
   programs.xwayland.enable = true;
 
   # Enable SDDM
@@ -25,13 +26,6 @@
       Restart = "always";
     };
   };
-  # Enable Hyprland (Optional)
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    xwayland.enable = true;
-  };
   # 🎧 Blueman (Bluetooth GUI) — disabled as requested
   services.blueman.enable = false;
 
@@ -41,7 +35,6 @@
     xdgOpenUsePortal = true;  # Use portal for file pickers too
     configPackages = [ pkgs.kdePackages.xdg-desktop-portal-kde ];  # Or -kde for Plasma
 #     extraPortals = [  pkgs.kdePackages.xdg-desktop-portal-kde ];
-      # pkgs.xdg-desktop-portal-wlr ];  # wlr for wlroots-based WMs like Hyprland/Sway
 
   };
   # PipeWire (Audio)

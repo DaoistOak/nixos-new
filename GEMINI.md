@@ -6,7 +6,7 @@ This directory contains the complete configuration for a NixOS system, managed u
 
 *   **System Hostname:** Overlord
 *   **Primary User:** zeph
-*   **Desktop Environment:** KDE Plasma 6 with SDDM as the display manager. Hyprland is also enabled.
+*   **Desktop Environment:** KDE Plasma 6 with SDDM as the display manager.
 *   **Key Technologies:** The configuration uses Nix Flakes to manage dependencies and system configurations. It pulls packages from `nixpkgs-unstable`, `home-manager`, `chaotic-nyx`, and `nur`.
 
 ## Building and Running
