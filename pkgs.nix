@@ -110,7 +110,7 @@ in {
     lazydocker
     lazygit
     lm_sensors
-    # mesa-demos
+    mesa-demos
     mpv
     neovim
     ninja
