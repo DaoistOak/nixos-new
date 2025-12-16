@@ -158,6 +158,9 @@ in {
     libvirt
     libxkbcommon
     luarocks
+    eglexternalplatform
+    egl-wayland
+    libGL
     libva
     libvdpau
     libvdpau-va-gl
